@@ -35,6 +35,7 @@ jobs:
         run: |
           set -e
           for dir in $(find . -type f -name "*.go" -exec dirname {} \; | sort -u); do
+            echo ""
             echo "Running in $dir"
             cd $dir
             if [ -f "go.mod" ]; then
